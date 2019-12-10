@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+</div>
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Picture</th>
+                    <th>Title</th>                    
+                    <th>Release Date</th>
+                    <th>Overview</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let movie of movies" >
+                    <td><img [src] = "'http://image.tmdb.org/t/p/w185//' + movie.poster_path"
+                        [style.width.px] = "imageWidth" 
+                        [style.margin.px] = "imageMargin"
+                        [title] = "movie.title"
+                    ></td>
+                    <td style="width: 15%; font-size: 30px;">{{movie.title}}</td>
+                    <td style="width: 10%; font-size: 20px;">{{movie.release_date}}</td>
+                    <td style="width: 45%;">{{movie.overview}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

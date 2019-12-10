@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+</div>
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Picture</th>
+                    <th>Title</th>                    
+                    <th>Release Date</th>
+                    <th>Overview</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let show of shows">
+                    <td><img [src] = "'http://image.tmdb.org/t/p/w185//' + show.poster_path"
+                        [style.width.px] = "imageWidth" 
+                        [style.margin.px] = "imageMargin"
+                        [title] = "show.name"
+                    ></td>
+                    <td style="width: 15%; font-size: 30px;">{{show.name}}</td>
+                    <td style="width: 10%; font-size: 20px;">{{show.first_air_date}}</td>
+                    <td style="width: 45%;">{{show.overview}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

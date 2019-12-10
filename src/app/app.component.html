@@ -1,7 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{title}}!!
+    {{title}}
   </h1>
-  ... Starter Files ...
+
+  <nav class="navbar navbar-light">
+      <a href="" class="navbar-brand">{{title}}</a>
+      <ul class="nav nav-pills">
+        <li><a [routerLink] = "['/welcome']" class="nav-link">Home</a></li>
+        <li><a [routerLink] = "['/movies']" class="nav-link">Movies</a></li>
+        <li><a [routerLink] = "['/shows']" class="nav-link">Shows</a></li>
+      </ul>
+    </nav>
+
+    <router-outlet></router-outlet>
 </div>
